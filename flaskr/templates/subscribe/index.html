@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}Subscribe to NoPainJustPay{% endblock %}</h1>
+{% endblock %} {% block content %} {% if g.user %}
+<h2>Welcome {{ g.user['username'] }}</h2>
+<div class="subscribe-container">
+  <a href="{{ url_for('stripe_checkout.create_checkout_session') }}"
+    >Click here to subscribe</a
+  >
+  <img src="\static\NoPainJustPayLogo.png" class="icon" />
+</div>
+{% else %}
+<h1>Register or Login</h1>
+
+{% endif %} {% endblock %}

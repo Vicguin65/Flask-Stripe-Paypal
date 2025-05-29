@@ -30,8 +30,11 @@ def create_app(test_config=None):
     from . import auth
     app.register_blueprint(auth.bp)
 
-    from . import blog
-    app.register_blueprint(blog.bp)
+    from . import subscribe
+    app.register_blueprint(subscribe.bp)
     app.add_url_rule('/', endpoint='index')
+
+    from . import stripe_checkout
+    app.register_blueprint(stripe_checkout.bp)
 
     return app

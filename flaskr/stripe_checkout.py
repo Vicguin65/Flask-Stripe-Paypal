@@ -11,24 +11,26 @@ from . import stripe_helper
 bp = Blueprint('stripe_checkout', __name__)
 
 
-@bp.route('/create-checkout-session', methods=('POST'))
+@bp.route('/create-checkout-session', methods=('POST', 'GET'))
 @login_required
 def create_checkout_session():
     try:
         stripe_client = stripe_helper.get_stripe_client()
         checkout_session = stripe_client.checkout.Session.create(
+            customer=g.user['stripe_id'],
             line_items=[
                 {
-                    # Provide the exact Price ID (for example, price_1234) of the product you want to sell
-                    'price': '{{PRICE_ID}}',
+                    'price': 'price_1RRjCHQnnAtAO4Wp4bXSXa7L',
                     'quantity': 1,
                 },
             ],
-            mode='payment',
-            success_url=url_for('index') + '/success.html',
-            cancel_url=url_for('index') + '/cancel.html',
+            mode='subscription',
+            success_url='http://localhost:5000/success',
+            cancel_url='http://localhost:5000',
         )
     except Exception as e:
+        print('errored')
+        print(url_for('index'))
         return str(e)
 
     return redirect(checkout_session.url, code=303)
