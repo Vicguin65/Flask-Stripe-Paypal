@@ -1,126 +1,120 @@
 html {
-  font-family: sans-serif;
-  background: #eee;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background: #f4f4f4;
   padding: 1rem;
 }
+
 body {
   max-width: 960px;
   margin: 0 auto;
   background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 2rem;
 }
-h1 {
-  font-family: serif;
-  color: #377ba8;
-  margin: 1rem 0;
-}
+
+/* Headings in branding colors */
+h1,
 h2 {
-  font-family: serif;
-  color: #377ba8;
-  margin: 1rem 0;
+  font-family: "Impact", sans-serif;
+  color: #ff4500; /* Bright and fun */
+  text-shadow: 1px 1px 0 #000;
 }
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin: 1.5rem 0 0.5rem;
+}
+
+/* Links in money green */
 a {
-  color: #377ba8;
-}
-hr {
-  border: none;
-  border-top: 1px solid lightgray;
-}
-nav {
-  background: lightgray;
-  display: flex;
-  align-items: center;
-  padding: 0 0.5rem;
-}
-nav h1 {
-  flex: auto;
-  margin: 0;
-}
-nav h1 a {
+  color: #228b22;
+  font-weight: bold;
   text-decoration: none;
-  padding: 0.25rem 0.5rem;
 }
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+
+a:hover {
+  text-decoration: underline;
 }
+
+/* Navigation bar with bold theme */
+nav {
+  background: #f5a442;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px 5px 0 0;
+}
+
+nav h1 a {
+  color: white;
+  text-shadow: 1px 1px 0 #000;
+}
+
 nav ul li a,
 nav ul li span,
 header .action {
-  display: block;
-  padding: 0.5rem;
+  color: white;
+  font-weight: bold;
 }
-.content {
-  padding: 0 1rem 1rem;
-}
-.content > header {
-  border-bottom: 1px solid lightgray;
-  display: flex;
-  align-items: flex-end;
-}
-.content > header h1 {
-  flex: auto;
-  margin: 1rem 0 0.25rem 0;
-}
+
 .flash {
-  margin: 1em 0;
-  padding: 1em;
-  background: #cae6f6;
-  border: 1px solid #377ba8;
+  background: #fdf5e6;
+  border: 1px solid #ffa500;
+  color: #8b4513;
 }
-.post > header {
-  display: flex;
-  align-items: flex-end;
-  font-size: 0.85em;
+
+/* NoPainJustPay Specific Sections */
+.nopain-section {
+  text-align: center;
+  padding: 2rem;
+  background: #fff8dc;
+  border: 2px dashed #ff4500;
+  border-radius: 12px;
+  margin-top: 2rem;
 }
-.post > header > div:first-of-type {
-  flex: auto;
+
+.nopain-section p {
+  font-size: 1.2rem;
+  color: #444;
+  margin: 1rem 0;
 }
-.post > header h1 {
-  font-size: 1.5em;
-  margin-bottom: 0;
+
+.nopain-section strong {
+  color: #228b22;
 }
-.post .about {
-  color: slategray;
+
+.nopain-section em {
+  color: #555;
   font-style: italic;
 }
-.post .body {
-  white-space: pre-line;
+
+.logo {
+  display: block;
+  margin: auto;
+  width: 50%;
+  max-width: 200px;
 }
-.content:last-child {
-  margin-bottom: 0;
+
+button.cta-button {
+  background-color: #228b22;
+  color: white;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1.5rem;
 }
-.content form {
-  margin: 1em 0;
-  display: flex;
-  flex-direction: column;
+
+button.cta-button:hover {
+  background-color: #1e7e1e;
 }
-.content label {
-  font-weight: bold;
-  margin-bottom: 0.5em;
-}
-.content input,
-.content textarea {
-  margin-bottom: 1em;
-}
-.content textarea {
-  min-height: 12em;
-  resize: vertical;
-}
-input.danger {
-  color: #cc2f2e;
-}
-input[type="submit"] {
-  align-self: start;
-  min-width: 10em;
-}
-.subscribe-container {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.icon {
-  height: 100px;
-  width: 100px;
-}
+
+/* .icon {
+  max-height: ;
+} */

@@ -1,14 +1,60 @@
 {% extends 'base.html' %} {% block header %}
-<h1>{% block title %}Subscribe to NoPainJustPay{% endblock %}</h1>
+<h1>{% block title %}NoPainJustPay{% endblock %}</h1>
 {% endblock %} {% block content %} {% if g.user %}
 <h2>Welcome {{ g.user['username'] }}</h2>
+{% if status %}
+<p>Your Subscription status is <b>{{ status }}</b></p>
+<p>Start of current period <b>{{ period_start }}</b></p>
+<p>End of current period <b>{{ period_end }}</b></p>
+
+{% else %}
 <div class="subscribe-container">
   <a href="{{ url_for('stripe_checkout.create_checkout_session') }}"
     >Click here to subscribe</a
   >
   <img src="\static\NoPainJustPayLogo.png" class="icon" />
 </div>
-{% else %}
-<h1>Register or Login</h1>
+{% endif %} {% else %}
+<body>
+  <div class="nopain-section">
+    <img
+      src="{{ url_for('static', filename='NoPainJustPayLogo.png') }}"
+      alt="NoPainJustPay Logo"
+      class="logo"
+    />
+
+    <h1>🏋️ Welcome to NoPainJustPay</h1>
+
+    <p>
+      <span class="highlight">Why sweat it</span> when your card can do the
+      heavy lifting?
+    </p>
+
+    <p>
+      At <strong>NoPainJustPay™</strong>, we believe in a new kind of fitness
+      journey—<br />
+      one where your commitment is measured in <em>monthly payments</em>, not
+      minutes on a treadmill.
+    </p>
+
+    <p>
+      ✅ No crunches.<br />✅ No cardio.<br />✅ Just consistent credit card
+      curls.
+    </p>
+
+    <p>
+      Sign up today and experience the satisfaction of getting
+      <em>nowhere physically</em>,<br />
+      but still feeling <strong>financially committed</strong>.
+    </p>
+
+    <p>
+      <strong
+        >Because here at NoPainJustPay...<br />
+        You don’t lift weights — you lift charges. 💳💪</strong
+      >
+    </p>
+  </div>
+</body>
 
 {% endif %} {% endblock %}

@@ -29,8 +29,6 @@ def create_checkout_session():
             cancel_url='http://localhost:5000',
         )
     except Exception as e:
-        print('errored')
-        print(url_for('index'))
         return str(e)
 
     return redirect(checkout_session.url, code=303)
